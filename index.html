@@ -153,7 +153,7 @@ label{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:1px
 const JSONBIN_KEY = '$2a$10$7X1isu4M5d1IgG1ew56ufe0oKxgSOc377bsVRc7BlB2iebRlLRpF6';
 const JSONBIN_URL = 'https://api.jsonbin.io/v3/bins';
 const BIN_ID_KEY  = 'elturno_bin_id';
-const ADMIN_CODE  = 'admin123';
+const ADMIN_CODE  = 'Fachadazos1';
 const CRITERIA    = ['Sabor','Presentación','Cantidad','Originalidad'];
 
 const GROUPS = [
@@ -472,7 +472,7 @@ function renderAdmin() {
         <input type="password" id="adminCode" placeholder="Código admin…"/>
         <div id="adminErr"></div>
         <button class="btn btn-primary" onclick="tryAdminLogin()">Entrar</button>
-        <p style="font-size:11px;color:var(--muted);text-align:center;margin-top:10px">Código: <code style="color:var(--accent)">admin123</code></p>
+        
       </div>`;
     document.getElementById('adminCode').addEventListener('keydown',e=>{ if(e.key==='Enter') tryAdminLogin(); });
     return;
