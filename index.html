@@ -152,7 +152,7 @@ label{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:1px
 // ── CONFIG ────────────────────────────────────────────────────────────────────
 const JSONBIN_KEY = '$2a$10$7X1isu4M5d1IgG1ew56ufe0oKxgSOc377bsVRc7BlB2iebRlLRpF6';
 const JSONBIN_URL = 'https://api.jsonbin.io/v3/bins';
-const BIN_ID_KEY  = 'elturno_bin_id';
+const BIN_ID_KEY  = 'elturno_bin_id'; // unused
 const ADMIN_CODE  = 'Fachadazos1';
 const CRITERIA    = ['Sabor','Presentación','Cantidad','Originalidad'];
 
@@ -171,34 +171,22 @@ const GROUPS = [
 
 // ── STATE ─────────────────────────────────────────────────────────────────────
 let db = { sessions: [], activeSessionId: null };
-let binId = localStorage.getItem(BIN_ID_KEY) || null;
+let binId = '6a28cf42f5f4af5e29d59faa';
 let voterName = '';
 let adminUnlocked = false;
 let currentTab = 'vote';
 
 // ── JSONBIN API ───────────────────────────────────────────────────────────────
 async function loadDB() {
-  if (!binId) {
-    // create new bin
-    const r = await fetch(JSONBIN_URL, {
-      method: 'POST',
-      headers: { 'Content-Type':'application/json', 'X-Master-Key': JSONBIN_KEY, 'X-Bin-Name':'elturno', 'X-Bin-Private':'false' },
-      body: JSON.stringify(db)
-    });
-    const j = await r.json();
-    binId = j.metadata?.id || j.id;
-    localStorage.setItem(BIN_ID_KEY, binId);
-  } else {
-    const r = await fetch(`${JSONBIN_URL}/${binId}/latest`, {
-      headers: { 'X-Master-Key': JSONBIN_KEY }
-    });
-    const j = await r.json();
-    db = j.record || db;
-  }
+  const r = await fetch(`${JSONBIN_URL}/6a28cf42f5f4af5e29d59faa/latest`, {
+    headers: { 'X-Master-Key': JSONBIN_KEY }
+  });
+  const j = await r.json();
+  db = j.record || db;
 }
 
 async function saveDB() {
-  await fetch(`${JSONBIN_URL}/${binId}`, {
+  await fetch(`${JSONBIN_URL}/6a28cf42f5f4af5e29d59faa`, {
     method: 'PUT',
     headers: { 'Content-Type':'application/json', 'X-Master-Key': JSONBIN_KEY },
     body: JSON.stringify(db)
