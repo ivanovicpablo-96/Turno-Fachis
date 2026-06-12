@@ -6,7 +6,6 @@
 <title>El Turno 🏆</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600;700&display=swap');
-
 *{box-sizing:border-box;margin:0;padding:0;}
 :root{
   --bg:#0f0e17;--surface:#1a1828;--card:#221f35;
@@ -15,27 +14,17 @@
 }
 body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;}
 .app{max-width:480px;margin:0 auto;min-height:100vh;padding-bottom:80px;}
-
-/* HEADER */
 .header{background:linear-gradient(135deg,#1a1828,#221f35);border-bottom:2px solid var(--accent);padding:18px 20px 14px;position:sticky;top:0;z-index:100;}
 .header-title{font-family:'Bebas Neue',sans-serif;font-size:30px;letter-spacing:3px;color:var(--accent);}
 .header-sub{font-size:11px;color:var(--muted);letter-spacing:1px;text-transform:uppercase;margin-top:2px;display:flex;align-items:center;gap:6px;}
 .live-dot{width:7px;height:7px;background:var(--green);border-radius:50%;box-shadow:0 0 6px var(--green);display:inline-block;}
-
-/* TABS */
 .tabs{display:flex;background:var(--surface);border-bottom:1px solid var(--border);position:sticky;top:72px;z-index:99;}
 .tab{flex:1;padding:11px 4px;background:none;border:none;border-bottom:2px solid transparent;color:var(--muted);font-family:'DM Sans',sans-serif;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:1px;cursor:pointer;transition:all .2s;}
 .tab.active{color:var(--accent);border-bottom-color:var(--accent);}
-
-/* PAGE */
 .page{padding:18px 14px;display:none;}
 .page.active{display:block;}
-
-/* CARD */
 .card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;}
 .card-title{font-family:'Bebas Neue',sans-serif;font-size:19px;letter-spacing:2px;color:var(--accent);margin-bottom:12px;}
-
-/* INPUTS */
 input[type=text],input[type=password],select,textarea{
   width:100%;background:var(--surface);border:1px solid var(--border);border-radius:8px;
   padding:10px 14px;color:var(--text);font-family:'DM Sans',sans-serif;font-size:15px;
@@ -47,8 +36,6 @@ select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/
 select option{background:#221f35;}
 textarea{resize:vertical;min-height:70px;}
 label{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:1px;color:var(--muted);display:block;margin-bottom:5px;}
-
-/* BUTTONS */
 .btn{display:flex;align-items:center;justify-content:center;gap:6px;padding:12px 20px;border-radius:8px;border:none;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:700;cursor:pointer;transition:all .15s;width:100%;margin-top:10px;}
 .btn-primary{background:var(--accent);color:#0f0e17;}
 .btn-primary:hover{background:#e8920a;}
@@ -56,73 +43,35 @@ label{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:1px
 .btn-danger{background:transparent;color:var(--accent2);border:1px solid var(--accent2);font-size:13px;padding:7px 14px;width:auto;margin-top:0;}
 .btn-ghost{background:transparent;color:var(--muted);border:1px solid var(--border);}
 .btn-ghost:hover{border-color:var(--accent);color:var(--accent);}
-
-/* STARS */
 .stars{display:flex;gap:4px;margin-top:6px;}
 .star{font-size:30px;cursor:pointer;transition:transform .1s;filter:grayscale(1) opacity(.3);}
 .star.on{filter:none;transform:scale(1.05);}
 .star:hover{transform:scale(1.2);}
-
-/* CRITERIA */
 .crit-block{margin-bottom:16px;}
-
-/* RESULTS */
-.result-row{display:flex;align-items:center;padding:14px 14px;background:var(--card);border:1px solid var(--border);border-radius:10px;margin-bottom:8px;}
-.result-row.gold{border-color:var(--gold);}
-.result-row.silver{border-color:#c0c0c0;}
-.result-row.bronze{border-color:#cd7f32;}
-.rank{font-family:'Bebas Neue',sans-serif;font-size:22px;width:36px;flex-shrink:0;}
-.rname{flex:1;font-weight:600;font-size:15px;}
-.rscore{font-family:'Bebas Neue',sans-serif;font-size:28px;color:var(--accent);text-align:right;}
-.rvotes{font-size:10px;color:var(--muted);text-align:right;}
-
-/* ALERTS */
 .alert{padding:10px 14px;border-radius:8px;font-size:13px;margin-bottom:10px;}
 .alert-ok{background:rgba(76,175,80,.15);border:1px solid rgba(76,175,80,.4);color:#81c784;}
 .alert-err{background:rgba(224,92,58,.15);border:1px solid rgba(224,92,58,.4);color:#ef9a9a;}
-.alert-info{background:rgba(244,160,32,.1);border:1px solid rgba(244,160,32,.3);color:var(--accent);}
-
-/* MEMBERS LIST */
 .members{margin-top:8px;}
 .member{font-size:13px;color:var(--muted);padding:3px 0;border-bottom:1px solid rgba(255,255,255,.04);}
-
-/* GROUP HERO */
 .group-hero{text-align:center;padding:22px 0 10px;}
 .gh-label{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;}
 .gh-name{font-family:'Bebas Neue',sans-serif;font-size:44px;letter-spacing:3px;color:var(--accent);line-height:1;}
 .gh-votes{font-size:12px;color:var(--muted);margin-top:6px;}
-
-/* RANKING TABLE */
 .rtable{width:100%;border-collapse:collapse;margin-top:12px;}
 .rtable th{font-size:10px;text-transform:uppercase;letter-spacing:1px;color:var(--muted);padding:6px 8px;text-align:left;border-bottom:1px solid var(--border);}
 .rtable td{padding:10px 8px;border-bottom:1px solid rgba(255,255,255,.04);font-size:14px;}
-
-/* DIVIDER */
 .divider{height:1px;background:var(--border);margin:14px 0;}
-
-/* EMPTY */
 .empty{text-align:center;padding:48px 20px;color:var(--muted);}
 .empty .icon{font-size:46px;margin-bottom:12px;}
 .empty p{font-size:14px;line-height:1.6;}
-
-/* SPINNER */
 .spinner{text-align:center;padding:60px 20px;color:var(--muted);font-size:13px;}
-
-/* GROUP CARD in admin */
 .group-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:12px 14px;margin-bottom:8px;}
-.group-card-header{display:flex;align-items:center;justify-content:space-between;}
 .group-card-name{font-family:'Bebas Neue',sans-serif;font-size:17px;letter-spacing:1px;color:var(--accent);}
-
-/* CB breakdown */
 .cb-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:10px;}
 .cb-item{background:var(--surface);border-radius:6px;padding:7px 10px;font-size:13px;}
 .cb-item span{display:block;font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:2px;}
-
-/* comment thread */
 .comment{font-size:13px;color:var(--muted);border-left:2px solid var(--border);padding-left:10px;margin-top:8px;}
 .comment strong{color:var(--text);}
-
-/* big score display */
 .big-score{text-align:center;padding:24px 16px;}
 .bs-num{font-family:'Bebas Neue',sans-serif;font-size:80px;color:var(--gold);line-height:1;}
 .bs-denom{font-size:16px;color:var(--muted);}
@@ -141,7 +90,6 @@ label{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:1px
     <button class="tab" onclick="showTab('ranking')">Ranking</button>
     <button class="tab" onclick="showTab('admin')">Admin</button>
   </div>
-
   <div id="vote" class="page active"><div class="spinner">Cargando…</div></div>
   <div id="results" class="page"><div class="spinner">Cargando…</div></div>
   <div id="ranking" class="page"><div class="spinner">Cargando…</div></div>
@@ -150,59 +98,67 @@ label{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:1px
 
 <script>
 // ── CONFIG ────────────────────────────────────────────────────────────────────
-const JSONBIN_KEY = '$2a$10$7X1isu4M5d1IgG1ew56ufe0oKxgSOc377bsVRc7BlB2iebRlLRpF6';
-const JSONBIN_URL = 'https://api.jsonbin.io/v3/bins';
-const BIN_ID_KEY  = 'elturno_bin_id'; // unused
-const ADMIN_CODE  = 'Fachadazos1';
-const CRITERIA    = ['Sabor','Presentación','Cantidad','Originalidad'];
+const FB_URL   = 'https://el-turno-default-rtdb.firebaseio.com';
+const ADMIN_CODE = 'Fachadazos1';
+const CRITERIA   = ['Sabor','Presentación','Cantidad','Originalidad'];
 
 const GROUPS = [
-  { id:1, name:'Grupo 1', members:['Carlos Rolando Aspiazu','Bruno Cadario','Rafael Sakuma','Coco Paniagua'] },
-  { id:2, name:'Grupo 2', members:['Marco Teodovich','José Marco Salvatierra','Orlando Vaca','Sebastián Franco'] },
-  { id:3, name:'Grupo 3', members:['Matias Haderspock','Fernando Antelo','Sebastián López','Nicolás Torres'] },
-  { id:4, name:'Grupo 4', members:['Gery Esteban Suárez','Walter Antelo','Hjalmar Cortez','Rodrigo Adriazola'] },
-  { id:5, name:'Grupo 5', members:['Ronald Landivar','Esteban Justiniano','Sebastián Pacheco','Mustafa Hiza'] },
-  { id:6, name:'Grupo 6', members:['Pedro Eterovic','Diego Téllez','Oscar López','Fabio Camacho'] },
-  { id:7, name:'Grupo 7', members:['Alejandro Rosas','Rony Gutiérrez','Sebastián Alba','Juan Pablo Suárez'] },
-  { id:8, name:'Grupo 8', members:['Diego Rueda','Gian Marco Ferrero','Reinaldo Chavez','Gabriel Cronenbold'] },
-  { id:9, name:'Grupo 9', members:['Cristian Hillman','Richard Salvatierra','Juanshi Suarez','José Guillermo Justiniano'] },
-  { id:10,name:'Grupo 10',members:['Carlos Pablo Uequin','Adrián Ruegg','Santiago Roda','José Mauricio Dávila'] },
+  { id:1,  name:'Grupo 1',  members:['Carlos Rolando Aspiazu','Bruno Cadario','Rafael Sakuma','Coco Paniagua'] },
+  { id:2,  name:'Grupo 2',  members:['Marco Teodovich','José Marco Salvatierra','Orlando Vaca','Sebastián Franco'] },
+  { id:3,  name:'Grupo 3',  members:['Matias Haderspock','Fernando Antelo','Sebastián López','Nicolás Torres'] },
+  { id:4,  name:'Grupo 4',  members:['Gery Esteban Suárez','Walter Antelo','Hjalmar Cortez','Rodrigo Adriazola'] },
+  { id:5,  name:'Grupo 5',  members:['Ronald Landivar','Esteban Justiniano','Sebastián Pacheco','Mustafa Hiza'] },
+  { id:6,  name:'Grupo 6',  members:['Pedro Eterovic','Diego Téllez','Oscar López','Fabio Camacho'] },
+  { id:7,  name:'Grupo 7',  members:['Alejandro Rosas','Rony Gutiérrez','Sebastián Alba','Juan Pablo Suárez'] },
+  { id:8,  name:'Grupo 8',  members:['Diego Rueda','Gian Marco Ferrero','Reinaldo Chavez','Gabriel Cronenbold'] },
+  { id:9,  name:'Grupo 9',  members:['Cristian Hillman','Richard Salvatierra','Juanshi Suarez','José Guillermo Justiniano'] },
+  { id:10, name:'Grupo 10', members:['Carlos Pablo Uequin','Adrián Ruegg','Santiago Roda','José Mauricio Dávila'] },
 ];
 
 // ── STATE ─────────────────────────────────────────────────────────────────────
-let db = { sessions: [], activeSessionId: null };
-let binId = '6a28cf42f5f4af5e29d59faa';
+let db = { sessions:{}, activeSessionId: null };
 let voterName = '';
 let adminUnlocked = false;
 let currentTab = 'vote';
 
-// ── JSONBIN API ───────────────────────────────────────────────────────────────
+// ── FIREBASE REST API ─────────────────────────────────────────────────────────
 async function loadDB() {
-  const r = await fetch(`${JSONBIN_URL}/6a28cf42f5f4af5e29d59faa/latest`, {
-    headers: { 'X-Master-Key': JSONBIN_KEY }
-  });
+  const r = await fetch(`${FB_URL}/data.json`);
   const j = await r.json();
-  db = j.record || db;
+  if (j) db = j;
+  if (!db.sessions) db.sessions = {};
+  if (!db.activeSessionId) db.activeSessionId = null;
 }
 
 async function saveDB() {
-  await fetch(`${JSONBIN_URL}/6a28cf42f5f4af5e29d59faa`, {
+  await fetch(`${FB_URL}/data.json`, {
     method: 'PUT',
-    headers: { 'Content-Type':'application/json', 'X-Master-Key': JSONBIN_KEY },
+    headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(db)
   });
 }
 
+async function refreshAndRender() {
+  await loadDB();
+  updateHeader();
+  renderTab(currentTab);
+}
+
 // ── HELPERS ───────────────────────────────────────────────────────────────────
 function activeSession() {
-  return db.sessions.find(s => s.id === db.activeSessionId) || null;
+  if (!db.activeSessionId) return null;
+  return db.sessions[db.activeSessionId] || null;
+}
+
+function allSessions() {
+  return Object.values(db.sessions || {}).sort((a,b) => b.ts - a.ts);
 }
 
 function starsTo10(avg) { return Math.round((avg/5)*10*10)/10; }
 
 function calcResults(session) {
-  const votes = session.votes || [];
-  if (!votes.length) return { score10: null, byC: {}, voteCount: 0 };
+  const votes = session.votes ? Object.values(session.votes) : [];
+  if (!votes.length) return { score10: null, byC:{}, voteCount:0 };
   const byC = {};
   CRITERIA.forEach(c => {
     const vals = votes.map(v => v.ratings[c] || 0);
@@ -220,47 +176,43 @@ function groupById(id) { return GROUPS.find(g=>g.id===id); }
 
 function calcRanking() {
   const map = {};
-  db.sessions.filter(s=>s.id!==db.activeSessionId).forEach(s=>{
+  allSessions().filter(s => s.id !== db.activeSessionId).forEach(s => {
     const r = calcResults(s);
     if (!r.voteCount) return;
-    const name = s.groupName;
-    if (!map[name]) map[name]={totalScore:0,count:0};
-    map[name].totalScore += r.score10;
-    map[name].count++;
+    if (!map[s.groupName]) map[s.groupName] = { totalScore:0, count:0 };
+    map[s.groupName].totalScore += r.score10;
+    map[s.groupName].count++;
   });
   return Object.entries(map)
-    .map(([name,d])=>({name, avg: Math.round(d.totalScore/d.count*10)/10, sessions:d.count}))
-    .sort((a,b)=>b.avg-a.avg);
+    .map(([name,d]) => ({ name, avg: Math.round(d.totalScore/d.count*10)/10, sessions: d.count }))
+    .sort((a,b) => b.avg - a.avg);
 }
 
 // ── TAB NAVIGATION ────────────────────────────────────────────────────────────
 function showTab(tab) {
   currentTab = tab;
-  document.querySelectorAll('.tab').forEach((t,i)=>{
-    t.classList.toggle('active', ['vote','results','ranking','admin'][i]===tab);
+  document.querySelectorAll('.tab').forEach((t,i) => {
+    t.classList.toggle('active', ['vote','results','ranking','admin'][i] === tab);
   });
-  document.querySelectorAll('.page').forEach(p=>{
-    p.classList.toggle('active', p.id===tab);
+  document.querySelectorAll('.page').forEach(p => {
+    p.classList.toggle('active', p.id === tab);
   });
-  renderTab(tab);
+  refreshAndRender();
 }
 
 function renderTab(tab) {
-  if (tab==='vote') renderVote();
+  if (tab==='vote')    renderVote();
   else if (tab==='results') renderResults();
   else if (tab==='ranking') renderRanking();
-  else if (tab==='admin') renderAdmin();
+  else if (tab==='admin')   renderAdmin();
 }
 
 // ── HEADER ────────────────────────────────────────────────────────────────────
 function updateHeader() {
   const s = activeSession();
   const sub = document.getElementById('headerSub');
-  if (s) {
-    sub.innerHTML = `<span class="live-dot"></span>${s.groupName} · ${s.name}`;
-  } else {
-    sub.textContent = 'Sin sesión activa';
-  }
+  if (s) sub.innerHTML = `<span class="live-dot"></span>${s.groupName} · ${s.name}`;
+  else sub.textContent = 'Sin sesión activa';
 }
 
 // ── VOTE PAGE ─────────────────────────────────────────────────────────────────
@@ -279,14 +231,15 @@ function renderVote() {
         <div class="card-title">¿Quién eres?</div>
         <p style="font-size:13px;color:var(--muted);margin-bottom:12px">Ingresa tu nombre para votar.</p>
         <label>Tu nombre</label>
-        <input type="text" id="nameInput" placeholder="ej: Pablo García…" autocomplete="off"/>
+        <input type="text" id="nameInput" placeholder="ej: Carlos García…" autocomplete="off"/>
         <button class="btn btn-primary" onclick="confirmName()">Continuar →</button>
       </div>`;
-    document.getElementById('nameInput').addEventListener('keydown',e=>{ if(e.key==='Enter') confirmName(); });
+    document.getElementById('nameInput').addEventListener('keydown', e => { if(e.key==='Enter') confirmName(); });
     return;
   }
 
-  const alreadyVoted = (s.votes||[]).some(v=>v.voter.toLowerCase()===voterName.toLowerCase());
+  const votes = s.votes ? Object.values(s.votes) : [];
+  const alreadyVoted = votes.some(v => v.voter.toLowerCase() === voterName.toLowerCase());
 
   if (alreadyVoted) {
     el.innerHTML = `
@@ -306,7 +259,7 @@ function renderVote() {
     <div class="group-hero">
       <div class="gh-label">Calificando esta semana</div>
       <div class="gh-name">${s.groupName}</div>
-      <div class="gh-votes">${(s.votes||[]).length} voto(s) registrado(s)</div>
+      <div class="gh-votes">${votes.length} voto(s) registrado(s)</div>
     </div>
     ${group ? `<div class="card"><div class="card-title">Integrantes</div><div class="members">${membersHtml}</div></div>` : ''}
     <div class="card">
@@ -330,10 +283,10 @@ function renderVote() {
 
 function setStar(criteria, val) {
   window._voteRatings[criteria] = val;
-  [1,2,3,4,5].forEach(n=>{
+  [1,2,3,4,5].forEach(n => {
     document.getElementById(`star_${criteria}_${n}`).classList.toggle('on', n<=val);
   });
-  const allDone = CRITERIA.every(c=>window._voteRatings[c]);
+  const allDone = CRITERIA.every(c => window._voteRatings[c]);
   document.getElementById('submitVoteBtn').disabled = !allDone;
   document.getElementById('voteHint').style.display = allDone ? 'none' : 'block';
 }
@@ -349,32 +302,34 @@ async function submitVote() {
   const s = activeSession();
   if (!s) return;
   const btn = document.getElementById('submitVoteBtn');
-  btn.disabled = true;
-  btn.textContent = 'Guardando…';
+  btn.disabled = true; btn.textContent = 'Guardando…';
+  const voteId = Date.now().toString();
   const vote = {
-    id: Date.now(),
+    id: voteId,
     voter: voterName,
     ratings: {...window._voteRatings},
     comment: document.getElementById('commentInput').value.trim(),
     ts: Date.now()
   };
-  s.votes = s.votes || [];
-  s.votes.push(vote);
-  await saveDB();
+  // Save vote directly to Firebase
+  await fetch(`${FB_URL}/data/sessions/${s.id}/votes/${voteId}.json`, {
+    method: 'PUT',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(vote)
+  });
   document.getElementById('vote').innerHTML = `
     <div class="empty">
       <div class="icon">🎉</div>
       <p style="font-weight:600;font-size:16px;margin-bottom:8px">¡Voto registrado!</p>
       <p style="color:var(--muted)">Gracias, ${voterName}.</p>
-      <button class="btn btn-ghost" style="margin-top:20px;width:auto;padding:10px 24px" onclick="voterName='';renderVote()">Soy otra persona</button>
+      <button class="btn btn-ghost" style="margin-top:20px;width:auto;padding:10px 24px" onclick="voterName='';refreshAndRender()">Soy otra persona</button>
     </div>`;
-  updateHeader();
 }
 
 // ── RESULTS PAGE ──────────────────────────────────────────────────────────────
 function renderResults() {
   const el = document.getElementById('results');
-  const past = db.sessions.filter(s=>s.id!==db.activeSessionId);
+  const past = allSessions().filter(s => s.id !== db.activeSessionId);
   const s = activeSession();
 
   let selectHtml = '';
@@ -384,7 +339,7 @@ function renderResults() {
         <label>Ver sesión</label>
         <select onchange="renderSessionResult(this.value)">
           <option value="active">Sesión actual</option>
-          ${past.slice().reverse().map(p=>`<option value="${p.id}">${p.groupName} · ${p.name} · ${formatDate(p.id)}</option>`).join('')}
+          ${past.map(p=>`<option value="${p.id}">${p.groupName} · ${p.name} · ${formatDate(p.ts)}</option>`).join('')}
         </select>
       </div>`;
   }
@@ -399,13 +354,14 @@ function renderResults() {
 }
 
 function renderSessionResult(val) {
-  const s = val==='active' ? activeSession() : db.sessions.find(x=>x.id==val);
+  const s = val==='active' ? activeSession() : allSessions().find(x=>x.id==val);
   const el = document.getElementById('sessionResultContainer');
   if (!s) { el.innerHTML=`<div class="empty"><div class="icon">📊</div><p>Sin sesión activa.</p></div>`; return; }
   const r = calcResults(s);
-  const commentsHtml = (s.votes||[]).filter(v=>v.comment).map(v=>`<div class="comment"><strong>${v.voter}:</strong> ${v.comment}</div>`).join('');
+  const votes = s.votes ? Object.values(s.votes) : [];
+  const commentsHtml = votes.filter(v=>v.comment).map(v=>`<div class="comment"><strong>${v.voter}:</strong> ${v.comment}</div>`).join('');
   el.innerHTML = `
-    <div style="font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:10px">${s.groupName} · ${s.name} · ${formatDate(s.id)} · ${(s.votes||[]).length} voto(s)</div>
+    <div style="font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:10px">${s.groupName} · ${s.name} · ${formatDate(s.ts)} · ${votes.length} voto(s)</div>
     <div class="card big-score">
       <div class="bs-label">Score final</div>
       <div class="bs-num">${r.score10 !== null ? r.score10 : '—'}</div>
@@ -460,15 +416,13 @@ function renderAdmin() {
         <input type="password" id="adminCode" placeholder="Código admin…"/>
         <div id="adminErr"></div>
         <button class="btn btn-primary" onclick="tryAdminLogin()">Entrar</button>
-        
       </div>`;
-    document.getElementById('adminCode').addEventListener('keydown',e=>{ if(e.key==='Enter') tryAdminLogin(); });
+    document.getElementById('adminCode').addEventListener('keydown', e => { if(e.key==='Enter') tryAdminLogin(); });
     return;
   }
 
   const s = activeSession();
-  const past = db.sessions.filter(x=>x.id!==db.activeSessionId);
-
+  const past = allSessions().filter(x => x.id !== db.activeSessionId);
   const groupOptions = GROUPS.map(g=>`<option value="${g.id}">${g.name} — ${g.members[0]} y más…</option>`).join('');
 
   el.innerHTML = `
@@ -477,7 +431,9 @@ function renderAdmin() {
       <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px">
         <div>
           <div class="card-title" style="margin-bottom:2px">${s.groupName}</div>
-          <div style="font-size:11px;color:var(--muted);display:flex;align-items:center;gap:5px"><span class="live-dot"></span>${s.name} · ${(s.votes||[]).length} voto(s)</div>
+          <div style="font-size:11px;color:var(--muted);display:flex;align-items:center;gap:5px">
+            <span class="live-dot"></span>${s.name} · ${s.votes ? Object.values(s.votes).length : 0} voto(s)
+          </div>
         </div>
         <button class="btn btn-danger" onclick="closeSession()">Cerrar sesión</button>
       </div>
@@ -500,9 +456,7 @@ function renderAdmin() {
       <div class="card-title">Grupos</div>
       ${GROUPS.map(g=>`
         <div class="group-card">
-          <div class="group-card-header">
-            <div class="group-card-name">${g.name}</div>
-          </div>
+          <div class="group-card-name">${g.name}</div>
           <div class="members" style="margin-top:6px">${g.members.map(m=>`<div class="member">${m}</div>`).join('')}</div>
         </div>`).join('')}
     </div>
@@ -510,13 +464,13 @@ function renderAdmin() {
     ${past.length ? `
     <div class="card">
       <div class="card-title">Sesiones Pasadas</div>
-      ${past.slice().reverse().map(p=>`
+      ${past.map(p=>`
         <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(--border)">
           <div>
             <div style="font-weight:600;font-size:14px">${p.groupName}</div>
-            <div style="font-size:11px;color:var(--muted)">${p.name} · ${formatDate(p.id)} · ${(p.votes||[]).length} votos</div>
+            <div style="font-size:11px;color:var(--muted)">${p.name} · ${formatDate(p.ts)} · ${p.votes ? Object.values(p.votes).length : 0} votos</div>
           </div>
-          <button class="btn btn-danger" onclick="deleteSession(${p.id})">Eliminar</button>
+          <button class="btn btn-danger" onclick="deleteSession('${p.id}')">Eliminar</button>
         </div>`).join('')}
     </div>` : ''}
 
@@ -529,8 +483,9 @@ function renderAdmin() {
   document.getElementById('groupSelect').addEventListener('change', function() {
     const gid = parseInt(this.value);
     const group = GROUPS.find(g=>g.id===gid);
-    const prev = document.getElementById('groupPreview');
-    prev.innerHTML = group ? `<div class="members" style="background:var(--surface);border-radius:8px;padding:10px">${group.members.map(m=>`<div class="member">${m}</div>`).join('')}</div>` : '';
+    document.getElementById('groupPreview').innerHTML = group
+      ? `<div class="members" style="background:var(--surface);border-radius:8px;padding:10px">${group.members.map(m=>`<div class="member">${m}</div>`).join('')}</div>`
+      : '';
     updateCreateBtn();
   });
   document.getElementById('sessionName').addEventListener('input', updateCreateBtn);
@@ -538,52 +493,67 @@ function renderAdmin() {
 
 function updateCreateBtn() {
   const name = document.getElementById('sessionName')?.value.trim();
-  const gid = document.getElementById('groupSelect')?.value;
-  const btn = document.getElementById('createBtn');
+  const gid  = document.getElementById('groupSelect')?.value;
+  const btn  = document.getElementById('createBtn');
   if (btn) btn.disabled = !(name && gid);
 }
 
 function tryAdminLogin() {
   const v = document.getElementById('adminCode').value;
-  if (v===ADMIN_CODE) { adminUnlocked=true; renderAdmin(); }
-  else document.getElementById('adminErr').innerHTML=`<div class="alert alert-err" style="margin-top:8px">Código incorrecto</div>`;
+  if (v === ADMIN_CODE) { adminUnlocked = true; renderAdmin(); }
+  else document.getElementById('adminErr').innerHTML = `<div class="alert alert-err" style="margin-top:8px">Código incorrecto</div>`;
 }
 
 async function createSession() {
-  const name = document.getElementById('sessionName').value.trim();
-  const gid  = parseInt(document.getElementById('groupSelect').value);
+  const name  = document.getElementById('sessionName').value.trim();
+  const gid   = parseInt(document.getElementById('groupSelect').value);
   const group = GROUPS.find(g=>g.id===gid);
   if (!name || !group) return;
   const btn = document.getElementById('createBtn');
-  btn.disabled=true; btn.textContent='Guardando…';
-  const session = { id:Date.now(), name, groupId:gid, groupName:group.name, votes:[], ts:Date.now() };
-  db.sessions.push(session);
-  db.activeSessionId = session.id;
-  await saveDB();
-  updateHeader();
-  renderAdmin();
+  btn.disabled = true; btn.textContent = 'Guardando…';
+  const id = Date.now().toString();
+  const session = { id, name, groupId: gid, groupName: group.name, votes: {}, ts: Date.now() };
+  await fetch(`${FB_URL}/data/sessions/${id}.json`, {
+    method: 'PUT',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(session)
+  });
+  await fetch(`${FB_URL}/data/activeSessionId.json`, {
+    method: 'PUT',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(id)
+  });
+  await refreshAndRender();
 }
 
 async function closeSession() {
-  db.activeSessionId = null;
-  await saveDB();
-  updateHeader();
-  renderAdmin();
+  await fetch(`${FB_URL}/data/activeSessionId.json`, {
+    method: 'PUT',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(null)
+  });
+  await refreshAndRender();
 }
 
 async function deleteSession(id) {
-  db.sessions = db.sessions.filter(s=>s.id!==id);
-  if (db.activeSessionId===id) db.activeSessionId=null;
-  await saveDB();
-  updateHeader();
-  renderAdmin();
+  await fetch(`${FB_URL}/data/sessions/${id}.json`, { method: 'DELETE' });
+  if (db.activeSessionId == id) {
+    await fetch(`${FB_URL}/data/activeSessionId.json`, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(null)
+    });
+  }
+  await refreshAndRender();
 }
 
 async function resetAll() {
-  db = { sessions:[], activeSessionId:null };
-  await saveDB();
-  updateHeader();
-  renderAdmin();
+  await fetch(`${FB_URL}/data.json`, {
+    method: 'PUT',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ sessions:{}, activeSessionId: null })
+  });
+  await refreshAndRender();
 }
 
 // ── INIT ──────────────────────────────────────────────────────────────────────
@@ -591,7 +561,7 @@ async function resetAll() {
   try {
     await loadDB();
   } catch(e) {
-    console.error(e);
+    console.error('Error cargando datos:', e);
   }
   updateHeader();
   renderVote();
